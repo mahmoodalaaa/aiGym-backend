@@ -14,7 +14,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class UserController {
 
-    private AppUserRepository userRepository;
+    private final AppUserRepository userRepository;
 
     @GetMapping("/me")
     public ResponseEntity<AppUser> getCurrentUser(@AuthenticationPrincipal Jwt jwt) {
