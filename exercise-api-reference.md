@@ -98,6 +98,34 @@ curl --request POST \
   --header 'x-rapidapi-key: <YOUR_API_KEY>' \
   --data '{"key1":"value","key2":"value"}'
 ```
+### output example
+
+{
+  "success": true,
+  "total": 345,
+  "offset": 0,
+  "limit": 1,
+  "data": [
+    {
+      "exerciseId": "0IgNjSM",
+      "name": "dumbbell standing reverse curl",
+      "targetMuscles": "biceps",
+      "bodyParts": "upper arms",
+      "equipments": "dumbbell",
+      "secondaryMuscles": [
+        "forearms"
+      ],
+      "gifUrl": "https://bigyellow.site/gifs/0IgNjSM.gif",
+      "instructions": [
+        "Step:1 Stand up straight with your feet shoulder-width apart and hold a dumbbell in each hand, palms facing your body.",
+        "Step:2 Keeping your upper arms stationary, exhale and curl the weights while contracting your biceps. Continue to raise the weights until your biceps are fully contracted and the dumbbells are at shoulder level.",
+        "Step:3 Hold the contracted position for a brief pause as you squeeze your biceps.",
+        "Step:4 Inhale and slowly begin to lower the dumbbells back to the starting position.",
+        "Step:5 Repeat for the desired number of repetitions."
+      ]
+    }
+  ]
+}
 
 ### Query parameters
 
@@ -139,6 +167,34 @@ curl --request POST \
   --header 'x-rapidapi-key: <YOUR_API_KEY>' \
   --data '{"key1":"value","key2":"value"}'
 ```
+### output example
+
+{
+  "success": true,
+  "total": 151,
+  "offset": 0,
+  "limit": 1,
+  "data": [
+    {
+      "exerciseId": "0IgNjSM",
+      "name": "dumbbell standing reverse curl",
+      "targetMuscles": "biceps",
+      "bodyParts": "upper arms",
+      "equipments": "dumbbell",
+      "secondaryMuscles": [
+        "forearms"
+      ],
+      "gifUrl": "https://bigyellow.site/gifs/0IgNjSM.gif",
+      "instructions": [
+        "Step:1 Stand up straight with your feet shoulder-width apart and hold a dumbbell in each hand, palms facing your body.",
+        "Step:2 Keeping your upper arms stationary, exhale and curl the weights while contracting your biceps. Continue to raise the weights until your biceps are fully contracted and the dumbbells are at shoulder level.",
+        "Step:3 Hold the contracted position for a brief pause as you squeeze your biceps.",
+        "Step:4 Inhale and slowly begin to lower the dumbbells back to the starting position.",
+        "Step:5 Repeat for the desired number of repetitions."
+      ]
+    }
+  ]
+}
 
 ### Query parameters
 
@@ -185,6 +241,35 @@ curl --request POST \
   --data '{"key1":"value","key2":"value"}'
 ```
 
+### output example
+
+{
+  "success": true,
+  "total": 59,
+  "offset": 0,
+  "limit": 1,
+  "data": [
+    {
+      "exerciseId": "0S75mYG",
+      "name": "smith seated one leg calf raise",
+      "targetMuscles": "calves",
+      "bodyParts": "lower legs",
+      "equipments": "smith machine",
+      "secondaryMuscles": [
+        "hamstrings"
+      ],
+      "gifUrl": "https://bigyellow.site/gifs/0S75mYG.gif",
+      "instructions": [
+        "Step:1 Sit on the machine with your back against the pad and your feet on the footrest.",
+        "Step:2 Place one leg on the footrest and keep the other leg off the footrest.",
+        "Step:3 Using your calf muscles, raise your heel as high as possible.",
+        "Step:4 Pause for a moment at the top, then slowly lower your heel back down to the starting position.",
+        "Step:5 Repeat for the desired number of repetitions, then switch legs and repeat."
+      ]
+    }
+  ]
+}
+
 ### Query parameters
 
 - `bodypart`
@@ -226,6 +311,38 @@ curl --request POST \
   --header 'x-rapidapi-key: <YOUR_API_KEY>' \
   --data '{"key1":"value","key2":"value"}'
 ```
+
+### output example
+
+{
+  "success": true,
+  "total": 1,
+  "offset": 0,
+  "limit": 1,
+  "data": [
+    {
+      "exerciseId": "jQGwmxN",
+      "name": "trap bar deadlift",
+      "targetMuscles": "glutes",
+      "bodyParts": "upper legs",
+      "equipments": "trap bar",
+      "secondaryMuscles": [
+        "hamstrings",
+        "quadriceps",
+        "lower back"
+      ],
+      "gifUrl": "https://bigyellow.site/gifs/jQGwmxN.gif",
+      "instructions": [
+        "Step:1 Stand with your feet shoulder-width apart and the trap bar on the ground in front of you.",
+        "Step:2 Bend at the hips and knees to lower yourself down and grip the handles of the trap bar with an overhand grip.",
+        "Step:3 Keep your back straight and chest up as you begin to lift the trap bar off the ground by extending your hips and knees.",
+        "Step:4 As you lift, focus on driving through your heels and squeezing your glutes at the top of the movement.",
+        "Step:5 Lower the trap bar back down to the ground by bending at the hips and knees, keeping your back straight throughout the movement.",
+        "Step:6 Repeat for the desired number of repetitions."
+      ]
+    }
+  ]
+}
 
 ### Query parameters
 
@@ -269,6 +386,76 @@ curl --request POST \
   --data '{"key1":"value","key2":"value"}'
 ```
 
+### output 
+
+
+{
+  "success": true,
+  "data": [
+    {
+      "name": "back"
+    },
+    {
+      "name": "levator scapulae"
+    },
+    {
+      "name": "abductors"
+    },
+    {
+      "name": "serratus anterior"
+    },
+    {
+      "name": "traps"
+    },
+    {
+      "name": "forearms"
+    },
+    {
+      "name": "delts"
+    },
+    {
+      "name": "biceps"
+    },
+    {
+      "name": "upper back"
+    },
+    {
+      "name": "spine"
+    },
+    {
+      "name": "cardiovascular system"
+    },
+    {
+      "name": "triceps"
+    },
+    {
+      "name": "adductors"
+    },
+    {
+      "name": "hamstrings"
+    },
+    {
+      "name": "glutes"
+    },
+    {
+      "name": "pectorals"
+    },
+    {
+      "name": "calves"
+    },
+    {
+      "name": "lats"
+    },
+    {
+      "name": "quads"
+    },
+    {
+      "name": "abs"
+    }
+  ]
+}
+
+
 ### Backend usage guidance
 
 Use this endpoint for:
@@ -300,6 +487,98 @@ curl --request POST \
   --data '{"key1":"value","key2":"value"}'
 ```
 
+### output 
+
+{
+  "success": true,
+  "data": [
+    {
+      "name": "stepmill machine"
+    },
+    {
+      "name": "elliptical machine"
+    },
+    {
+      "name": "trap bar"
+    },
+    {
+      "name": "tire"
+    },
+    {
+      "name": "stationary bike"
+    },
+    {
+      "name": "wheel roller"
+    },
+    {
+      "name": "smith machine"
+    },
+    {
+      "name": "hammer"
+    },
+    {
+      "name": "skierg machine"
+    },
+    {
+      "name": "roller"
+    },
+    {
+      "name": "resistance band"
+    },
+    {
+      "name": "bosu ball"
+    },
+    {
+      "name": "weighted"
+    },
+    {
+      "name": "olympic barbell"
+    },
+    {
+      "name": "kettlebell"
+    },
+    {
+      "name": "upper body ergometer"
+    },
+    {
+      "name": "sled machine"
+    },
+    {
+      "name": "ez barbell"
+    },
+    {
+      "name": "dumbbell"
+    },
+    {
+      "name": "rope"
+    },
+    {
+      "name": "barbell"
+    },
+    {
+      "name": "band"
+    },
+    {
+      "name": "stability ball"
+    },
+    {
+      "name": "medicine ball"
+    },
+    {
+      "name": "assisted"
+    },
+    {
+      "name": "leverage machine"
+    },
+    {
+      "name": "cable"
+    },
+    {
+      "name": "body weight"
+    }
+  ]
+}
+
 ### Backend usage guidance
 
 Use this endpoint for:
@@ -330,6 +609,44 @@ curl --request POST \
   --header 'x-rapidapi-key: <YOUR_API_KEY>' \
   --data '{"key1":"value","key2":"value"}'
 ```
+
+### output 
+
+{
+  "success": true,
+  "data": [
+    {
+      "name": "neck"
+    },
+    {
+      "name": "lower arms"
+    },
+    {
+      "name": "shoulders"
+    },
+    {
+      "name": "cardio"
+    },
+    {
+      "name": "upper arms"
+    },
+    {
+      "name": "chest"
+    },
+    {
+      "name": "lower legs"
+    },
+    {
+      "name": "back"
+    },
+    {
+      "name": "upper legs"
+    },
+    {
+      "name": "waist"
+    }
+  ]
+}
 
 ### Backend usage guidance
 
