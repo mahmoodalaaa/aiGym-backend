@@ -47,6 +47,7 @@ public class UserController {
         AppUser user = userRepository.findByAuth0Id(auth0Id)
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
+        if (updateDTO.getEmail() != null) user.setEmail(updateDTO.getEmail());
         if (updateDTO.getName() != null) user.setName(updateDTO.getName());
         if (updateDTO.getHeight() != null) user.setHeight(updateDTO.getHeight());
         if (updateDTO.getWeight() != null) user.setWeight(updateDTO.getWeight());
