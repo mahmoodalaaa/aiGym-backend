@@ -4,6 +4,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,16 +26,6 @@ public class UserController {
 
         String auth0Id = jwt.getSubject();
 
-        // Auth0 custom claims or standard OIDC claims can hold the email
-        // Make sure to add the "email" scope in the frontend request
-        String email = jwt.getClaimAsString("email");
-        if (email == null) {
-            // Attempt an alternative claim namespace if configured with rules/actions,
-            // e.g., "https://aiGym/email"
-            // For now fallback to a placeholder if email is missing from the token
-            email = "no-email-provided";
-        }
-
         AppUser user = userRepository.findByAuth0Id(auth0Id)
                 .orElseGet(() -> {
                     AppUser newUser = new AppUser(jwt.getSubject(),
@@ -43,5 +35,26 @@ public class UserController {
                 });
 
         return ResponseEntity.ok(user);
+    }
+
+    @PutMapping("/me")
+    public ResponseEntity<AppUser> updateCurrentUser(@AuthenticationPrincipal Jwt jwt, @RequestBody UserUpdateDTO updateDTO) {
+        if (jwt == null) {
+            return ResponseEntity.status(401).build();
+        }
+
+        String auth0Id = jwt.getSubject();
+        AppUser user = userRepository.findByAuth0Id(auth0Id)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        if (updateDTO.getName() != null) user.setName(updateDTO.getName());
+        if (updateDTO.getHeight() != null) user.setHeight(updateDTO.getHeight());
+        if (updateDTO.getWeight() != null) user.setWeight(updateDTO.getWeight());
+        if (updateDTO.getDailyCalories() != null) user.setDailyCalories(updateDTO.getDailyCalories());
+        if (updateDTO.getDailyProtein() != null) user.setDailyProtein(updateDTO.getDailyProtein());
+        if (updateDTO.getDailyCarbs() != null) user.setDailyCarbs(updateDTO.getDailyCarbs());
+        if (updateDTO.getDailyFat() != null) user.setDailyFat(updateDTO.getDailyFat());
+
+        return ResponseEntity.ok(userRepository.save(user));
     }
 }

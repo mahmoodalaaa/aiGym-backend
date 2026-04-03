@@ -22,6 +22,14 @@ public class AppUser {
     @Column(nullable = false)
     private String email;
 
+    private String name;
+    private Double height;
+    private Double weight;
+    private Integer dailyCalories;
+    private Integer dailyProtein;
+    private Integer dailyCarbs;
+    private Integer dailyFat;
+
     public AppUser(String auth0Id, String email) {
         this.auth0Id = auth0Id;
         this.email = email;
