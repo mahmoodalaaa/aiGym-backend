@@ -28,9 +28,19 @@ public class UserController {
 
         AppUser user = userRepository.findByAuth0Id(auth0Id)
                 .orElseGet(() -> {
-                    AppUser newUser = new AppUser(jwt.getSubject(),
-                            jwt.getClaimAsString("email") != null ? jwt.getClaimAsString("email")
-                                    : "temp-email@domain.com");
+                    String email = jwt.getClaimAsString("email");
+                    if (email == null) {
+                        for (String key : jwt.getClaims().keySet()) {
+                            if (key.endsWith("/email")) {
+                                email = jwt.getClaimAsString(key);
+                                break;
+                            }
+                        }
+                    }
+                    if (email == null) {
+                        email = "temp-email@domain.com";
+                    }
+                    AppUser newUser = new AppUser(jwt.getSubject(), email);
                     return userRepository.save(newUser);
                 });
 
